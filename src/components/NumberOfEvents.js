@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-const NumberOfEvents = () => {
+const NumberOfEvents = ({setCurrentNOE}) => {
     const [query, setQuery] = useState("32");
     const handleInputChanged = (event) => {
         const value = event.target.value; //obtain value to in input field
       
         setQuery(value);
+        setCurrentNOE(value);
       };
     
   return (

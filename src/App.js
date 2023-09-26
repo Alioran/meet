@@ -15,7 +15,7 @@ function App() {
   //fetch the data when App is mounted
   useEffect(() => {
     fetchData();
-  }, [currentCity]);
+  }, [currentCity, currentNOE]);
 
 
   //get all the events of current number of events
@@ -32,7 +32,7 @@ function App() {
     <div className="App">
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
         <EventList events={events}/>
-        <NumberOfEvents />
+        <NumberOfEvents setCurrentNOE = {setCurrentNOE}/>
     </div>
   );
 }
