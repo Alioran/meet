@@ -12,17 +12,17 @@ const Event = ({ event }) => {
   };
 
   return (
-    <li>
+    <li className="event">
       <h1>{event.summary}</h1>
       <p className="date-created">{event.created}</p>
       <p className="location">{event.location}</p>
       {showDetails ? (
         <div className="details">
           <p>details here</p>
-          <button onClick={handleHideDetails}>Hide Details</button>
+          <button className="details-btn" onClick={handleHideDetails}>Hide Details</button>
         </div>
       ) : (
-        <button onClick={handleShowDetails}>Show Details</button>
+        <button className="details-btn" onClick={handleShowDetails}>Show Details</button>
       )}
     </li>
   );
