@@ -5,6 +5,10 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+//NOTE TO SELF: for atatus to work, go incognito so adblock doesnt prevent it
+import * as atatus from 'atatus-spa';
+atatus.config('454220dd345944669238cc0df077776f').install();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
