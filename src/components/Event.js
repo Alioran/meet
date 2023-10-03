@@ -18,7 +18,10 @@ const Event = ({ event }) => {
       <p className="location">{event.location}</p>
       {showDetails ? (
         <div className="details">
-          <p>details here</p>
+          <h3>Creator: {event.creator.email}</h3>
+          <p>Organizer: {event.organizer.email}</p>
+          <p>Start Time: {event.start.dateTime}</p>
+          <p>End Time: {event.end.dateTime}</p>
           <button className="details-btn" onClick={handleHideDetails}>Hide Details</button>
         </div>
       ) : (
