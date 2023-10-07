@@ -7,11 +7,12 @@ import { InfoAlert, ErrorAlert, WarningAlert } from "./components/Alert";
 import CityEventsChart from "./components/CityEventsChart";
 import EventGenresChart from "./components/EventGenresChart";
 
+
 import "./App.css";
 
 function App() {
   const [events, setEvents] = useState([]);
-  const [currentNOE, setCurrentNOE] = useState(32); //NOE = Number of Events
+  const [currentNOE, setCurrentNOE] = useState(12); //NOE = Number of Events, set to 12 instead of 32 for UI purposes
   const [allLocations, setAllLocations] = useState([]);
   const [currentCity, setCurrentCity] = useState("See all cities");
   const [infoAlert, setInfoAlert] = useState("");
@@ -41,12 +42,15 @@ function App() {
 
   return (
     <div className="App">
+      <img src="../../public/meet-app-512.png" alt="" width="500px"></img>
       <div className="alerts-container">
         {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
         {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
-      <CitySearch
+
+      <div className="user-input">
+              <CitySearch
         allLocations={allLocations}
         setCurrentCity={setCurrentCity}
         setInfoAlert={setInfoAlert}
@@ -55,11 +59,15 @@ function App() {
         setCurrentNOE={setCurrentNOE}
         setErrorAlert={setErrorAlert}
       />
+      </div>
+
       <div className="charts-container">
         <EventGenresChart events={events} />
         <CityEventsChart allLocations={allLocations} events={events} />
       </div>
+      
       <EventList events={events} />
+
     </div>
   );
 }

@@ -12,9 +12,10 @@ describe("<NumberOfEvents /> component", () => {
         expect(NumberofEventsComponent.queryByRole("textbox")).toBeInTheDocument();
       });
 
-      test('render 32 for the default number in textbox', () => {
+      //changed from original 32 default to 12 for better UI
+      test('render 12 for the default number in textbox', () => {
         const numberTextBox = NumberofEventsComponent.queryByRole('textbox');
-        expect(numberTextBox).toHaveValue("32");
+        expect(numberTextBox).toHaveValue("12");
       });
 
       test('check that value changes to 10 after user input', async () => {

@@ -17,6 +17,15 @@ p {
   margin: 5px 0;
 }
 
+.user-input{
+  display: flex;
+  position: relative;
+  justify-content: end;
+  padding-right: 3px;
+  width: auto;
+}
+
+
 input[type="text"],
 input[type="number"] {
   padding: 8px 6px 8px 10px;
@@ -25,24 +34,29 @@ input[type="number"] {
   border: 1px solid #ccc;
   font-size: 14px;
   line-height: 20px;
-  align-self: center;
+  /* align-self: center; */
   height: 38px;
-  margin-bottom: 20px;
+  margin: 5px 0 20px 0;
+  width: 100%;
+}
+
+#city-search {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  position: relative;
+  align-items: start;
+  width: 30%;
+  text-align: left;
 }
 
 .city {
   width: 250px;
 }
 
-#city-search {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  position: relative;
-}
 
 .suggestions {
-  width: 250px;
+  width: 100%;
   position: absolute;
   top: 45px;
   z-index: 2;
@@ -68,30 +82,56 @@ input[type="number"] {
   background-color: #bcdcdb;
 }
 
+#number-events{
+  text-align: left;
+}
+
+div.recharts-legend-wrapper{
+  bottom: 10px !important;
+}
+
+.recharts-responsive-container:first-of-type{
+  margin-left: 0;
+}
+
+#event-list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .event {
   padding: 10px 10px 35px;
-  margin-bottom: 10px;
+  margin: 10px;
   text-align: left;
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
+  align-self: start;
 }
 
 .details-btn {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: 10px;
+  bottom: 10px;
   padding: 5px 8px;
   border-radius: 4px;
+  border: 0;
   outline: none;
   cursor: pointer;
+  background-color: rgb(#d9edf4);
+}
+
+.details{
+  margin: 20px 0;
+  border-top: 1px gray solid;
 }
 
 .alerts-container {
   position: fixed;
-  top: 0px;
+  top: 20px;
   left: 20px;
-  width: 250px;
+  width: 30%;
+  max-width: 250px;
   z-index: 1000;
 }
 
@@ -102,6 +142,30 @@ input[type="number"] {
 
 @media (max-width: 768px){
   .charts-container{
+    grid-template-columns: 1fr;
+  }
+  .recharts-responsive-container:first-of-type{
+    margin-left: 5%;
+  }
+  #event-list{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px){
+  .user-input{
+    flex-direction: column;
+    width: 60%;
+    left: 42%;
+  }
+  #city-search{
+    margin: 0;
+    width: auto;
+  }
+}
+
+@media (max-width: 480px){
+  #event-list{
     grid-template-columns: 1fr;
   }
 }

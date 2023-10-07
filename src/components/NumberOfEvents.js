@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const NumberOfEvents = ({setCurrentNOE, setErrorAlert}) => {
-    const [query, setQuery] = useState("32");
+    const [query, setQuery] = useState("12");
     const handleInputChanged = (event) => {
         const value = event.target.value; //obtain value to in input field
       
@@ -23,6 +23,7 @@ const NumberOfEvents = ({setCurrentNOE, setErrorAlert}) => {
     
   return (
     <div id="number-events">
+      Displayed Events: <br></br>
       <input
         type="text"
         className="number"

@@ -8,7 +8,8 @@ const feature = loadFeature("./src/features/specifyNumberOfEvents.feature");
 
 defineFeature(feature, (test) => {
     
-    test('When user hasn’t specified a number, 32 events are shown by default.', ({ given, when, then }) => {
+    //changed to 12 for UI purposes
+    test('When user hasn’t specified a number, 12 events are shown by default.', ({ given, when, then }) => {
         given('user hasn\'t changed the number for shown events', () => {
 
         });
@@ -23,7 +24,7 @@ defineFeature(feature, (test) => {
 
             await waitFor(() => {
                 const EventListItems = within(EventListDOM).queryAllByRole('listitem');
-                expect(EventListItems.length).toBe(32);
+                expect(EventListItems.length).toBe(12);
               });
         });
     });
