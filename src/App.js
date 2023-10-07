@@ -42,7 +42,6 @@ function App() {
 
   return (
     <div className="App">
-      <img src="../../public/meet-app-512.png" alt="" width="500px"></img>
       <div className="alerts-container">
         {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
