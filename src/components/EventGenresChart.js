@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import { PieChart, Pie, Legend, Cell, ResponsiveContainer } from "recharts";
 
-// define outside because it doesn't change ever
 const genres = ["React", "JavaScript", "Node", "jQuery", "Angular"];
 const colors = ["#a84740", "#dba51a", "#6cbd7a", "#6c95bd", "#906cbd"];
 
 const EventGenresChart = ({ events }) => {
   const [data, setData] = useState([]);
 
-  // simplified by putting getData inside useEffect, and then just change from function to variable
-  // to place inside setData
   useEffect(() => {
     const data = genres.map((genre) => {
       const filteredEvents = events.filter((event) =>
@@ -21,9 +18,8 @@ const EventGenresChart = ({ events }) => {
       };
     });
     setData(data);
-  }, [events]); // events dont need to be stringified to check for comparison because
-                // changes are being handled in App.js anyways
-
+  }, [events]);
+  
   const renderCustomizedLabel = ({
     cx,
     cy,
